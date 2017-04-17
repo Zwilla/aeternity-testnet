@@ -1,13 +1,27 @@
 æternity
 ==========
 
-This is the code used for the testnet for the [æternity](www.aeternity.com) project.
-
-This testnet uses simple PoW consensus. Its purpose is to show how state-channels work.
+This is the code used for the testnet for the [æternity](https://aeternity.com) project.
 
 ### Compiling and Runing
 You will need Erlang and a couple of libraries. Please follow instructions:
-[For Ubuntu](docs/compile.md)
+[For Ubuntu](../../Downloads/testnet-experimental/docs/compile_ubuntu.md)
+[For Mac](../../Downloads/testnet-experimental/docs/compile_mac.md)
+
+Then, start your node with following script:
+```
+sh start.sh
+```
+
+To download updates do this:
+```
+sh update.sh
+```
+
+### Commands
+
+#### Sync with the network
+To sync with the network and download the blockchain: 
 
 Then, start your node with following script:
 ```
@@ -57,7 +71,7 @@ If it returns something less than 1, that means you don't have an account yet.
 
 #### Create an account
 (does get done automatically when no accocunt and mining starts)
-[Make an account](docs/new_account.md)
+[Make an account](../../Downloads/testnet-experimental/docs/new_account.md)
 
 #### Check your balance
 ```
@@ -70,13 +84,6 @@ To stop a node run:
 easy:off().
 ```
 
-#### External port connections
-
-If you want to let other users download blocks from your node, then you need to make one of your ports accessible from external connections. By default it is port 8040.
-
-#### Contributing
-
-Have a look at the github issues.
 
 ### Else
 If you want to know more, check out our whitepaper on [aeternity.com](https://aeternity.com) and get in touch with us via [Gitter Chat](https://gitter.im/aeternity?Lobby) or write us (emails in whitepaper). 

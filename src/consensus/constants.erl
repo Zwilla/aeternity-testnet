@@ -7,7 +7,7 @@
 token_decimals() -> 100000000.
 default_port() -> 8040.
 key_length() ->
-    11. %so at most, we could store 16^11 =~ 17.6 trillion accounts and channels.
+    48. %so at most, we could store 16^11 =~ 17.6 trillion accounts and channels.
 trie_size() ->
     50000. %we can adjust this many accounts and channels per block.
 -define(InitialCoins, round(math:pow(2, 41)) - 1).
@@ -16,6 +16,8 @@ block_reward() -> round(math:pow(2, 29)) - 1.
 initial_difficulty() -> 12*256.%for testing purposes only
 %6452.
 difficulty_bits() -> 24.
+
+hash_size() -> 12.
 
 finality() -> 26.%/docs/security.py explains why.
 address_entropy() -> 96.
@@ -82,19 +84,15 @@ keys() -> root() ++ "keys.db".
 top() -> root() ++ "top.db".
 channel_manager() -> root() ++ "channel_manager.db".
 word_size() -> 100000.
-
-hash_size() -> 12.
-
-
 balance_bits() -> 48.%total number of coins is 2^(balance_bits()).
 half_bal() -> round(math:pow(2, balance_bits()-1)).
 acc_bits() -> hash_size()*8.%total number of accounts is 2^(acc_bits()) 800 billion.
 height_bits() -> 32. %maximum number of blocks is 2^this
-account_nonce_bits() -> 20.%maximum number of times you can update an account's state is 2^this.
-channel_nonce_bits() -> 30.%maximum number of times you can update a channel's state is 2^this.
+account_nonce_bits() -> 24.%maximum number of times you can update an account's state is 2^this.
+channel_nonce_bits() -> 32.%maximum number of times you can update a channel's state is 2^this.
 channel_rent_bits() -> 8.
 channel_delay_bits() -> 32. %2^this is the maximum amount of blocks you could have to channel_slash if your channel partner tries to cheat.
-		       
+orders_bits() -> 32.
 -define(AccountSizeWithoutPadding, 
 	(balance_bits() + height_bits() + account_nonce_bits() + acc_bits() + key_length())).
 -define(ChannelSizeWithoutPadding, 
@@ -102,15 +100,22 @@ channel_delay_bits() -> 32. %2^this is the maximum amount of blocks you could ha
 	     (balance_bits()*4) + channel_nonce_bits() + 
 	     (height_bits()*2) + 
 	     channel_entropy() + channel_delay_bits())).
+-define(ActiveOraclesSize,
+	(height_bits() + (hash_size()*8) + key_length())).
+		       
 account_padding() ->    
     8 - (?AccountSizeWithoutPadding rem 8).
 channel_padding() ->
     8 - (?ChannelSizeWithoutPadding rem 8).
+active_oracles_padding() ->
+    8 - (?ActiveOraclesSize rem 8).
 account_size() ->    
-    (?AccountSizeWithoutPadding + account_padding()) div 8.
+    (?AccountSizeWithoutPadding) div 8.
 channel_size() ->    
     (?ChannelSizeWithoutPadding + channel_padding()) div 8.
 existence_size() -> acc_bits().%hash_length*8
+active_oracles_size() ->
+    (?ActiveOraclesSize + active_oracles_padding()) div 8.
 
 channel_rent() -> account_rent().
 account_rent() -> round(math:pow(2, 13)).
