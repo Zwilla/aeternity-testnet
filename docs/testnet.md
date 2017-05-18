@@ -16,6 +16,8 @@ The script ' [setup_test.sh](https://github.com/Zwilla/aeternity-testnet/blob/ma
 - aeternity-testnet3010
 - aeternity-testnet3020
 - aeternity-testnet3030
+
+**(WARNING! DO NOT RUN SCRIPST FROM ..3010/20/30 folders)**
  
  * Than it will compile and clean the testnet.app and 
  * starts a screen session for every NODE!
