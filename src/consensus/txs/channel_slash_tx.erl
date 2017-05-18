@@ -1,7 +1,9 @@
 -module(channel_slash_tx).
--export([doit/3, make/5]).
+-export([doit/3, make/5, is_tx/1]).
 -record(cs, {from, nonce, fee = 0, 
 	     scriptpubkey, scriptsig}).
+is_tx(Tx) ->
+    is_record(Tx, cs).
 make(From, Fee, ScriptPubkey, ScriptSig, Trees) ->
     Governance = trees:governance(Trees),
     Accounts = trees:accounts(Trees),
@@ -59,4 +61,3 @@ doit(Tx, Trees, NewHeight) ->
     NewAccounts = accounts:write(Accounts, Account), 
     Trees2 = trees:update_channels(Trees, NewChannels),
     trees:update_accounts(Trees2, NewAccounts).
-		      
