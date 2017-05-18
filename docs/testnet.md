@@ -12,7 +12,7 @@ Access screen session 3030| `screen -r aeternity-3030`
 
 
 # How it works!
-The script 'setup_test.sh' will copy 3 times the testnet-folder into:
+The script ' [setup_test.sh](https://github.com/Zwilla/aeternity-testnet/blob/master/setup_test.sh) ' will copy 3 times the testnet-folder into:
 - aeternity-testnet3010
 - aeternity-testnet3020
 - aeternity-testnet3030
@@ -23,10 +23,13 @@ The script 'setup_test.sh' will copy 3 times the testnet-folder into:
  You can access the every screens session.
  * Node 3010 starts as mining node
  * Node 3020 and 3030 as full node
+
+ To make some tests run this script:
+ [lightning_test.sh](https://github.com/Zwilla/aeternity-testnet/blob/master/tests/lightning_test.sh)
  
  You find this file here: https://github.com/Zwilla/aeternity-testnet/blob/master/docs/testnet.md
   
-  Doante and support me:
+  Doante to and support Zwilla:
   * btc: -[1DaGkc1Uv4GeCSpjkrMVzCA35ENmrd526V]
   * eth: -[0x284DbB6139e2e08cd3D3BE6f51306c19cAB04e3c]
   * aeo: -[0x] (Aeternity Tokens)
