@@ -48,3 +48,12 @@ Choose  | COMMAND
  (4) clean             | will clean all and delete the extra folders
  (5) run tests!        | starting lightning test
  (6) exit!             | exit the script
+
+ __**Screen session how to:**__
+
+  Action  | How to
+  ------------ | -------------
+  enter screen session | screen -r (see above)
+  exit screen session | CTRL + a d
+  show running sessions | screen -w
+  stop all sessions | sh initd-aeternity.sh stop
