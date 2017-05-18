@@ -33,6 +33,7 @@ The script ' [setup_test.sh](https://github.com/Zwilla/aeternity-testnet/blob/ma
   Donate to .. and support Zwilla:
   * btc: -[1DaGkc1Uv4GeCSpjkrMVzCA35ENmrd526V]
   * eth: -[0x284DbB6139e2e08cd3D3BE6f51306c19cAB04e3c]
+  * ltc: -[LNvu63U68G72KXHWP5yqSuSYpoa7ef58c7]
   * aeo: -[0x] (Aeternity Tokens)
 
   You find this file here: https://github.com/Zwilla/aeternity-testnet/blob/master/docs/testnet.md

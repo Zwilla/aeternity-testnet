@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 # READ THIS: https://github.com/Zwilla/aeternity-testnet/blob/master/docs/testnet.md
+
+      checkvalid=${PWD##*/};
+      if [ $checkvalid == 'aeternity-testnet2' ]; then
+      echo "ok";
+      else
+      echo "aeternity-testnet folder not found";
+      echo "use this to get a valid copy now.";
+      echo "git clone https://github.com/Zwilla/aeternity-testnet.git";
+      echo "#########################################################";
+      exit 0;
+      fi;
+
 echo "Do you want to ... an Aeternity Testnet"
 choices=( 'update and setup!' 'start the now!' 'how to?' 'clean and stop' 'run test' 'exit!' );
 select choice in "${choices[@]}"; do
@@ -86,6 +98,14 @@ select choice in "${choices[@]}"; do
              ;;
 
       'start the Testnet now!')
+
+
+      if [ -d '../aeternity-testnet3010' ] && [ -d '../aeternity-testnet3020' ] && [ -d '../aeternity-testnet3030' ]; then
+      echo "ok";
+      else
+      continue;
+      fi;
+
              cp initd-aeternity.sh ../aeternity-testnet3010/
              cp initd-aeternity.sh ../aeternity-testnet3020/
              cp initd-aeternity.sh ../aeternity-testnet3030/
