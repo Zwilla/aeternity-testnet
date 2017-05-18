@@ -2,7 +2,7 @@
 # READ THIS: https://github.com/Zwilla/aeternity-testnet/blob/master/docs/testnet.md
 
       checkvalid=${PWD##*/};
-      if [ $checkvalid == 'aeternity-testnet2' ]; then
+      if [ $checkvalid == 'aeternity-testnet' ]; then
       echo "ok";
       else
       echo "aeternity-testnet folder not found";
