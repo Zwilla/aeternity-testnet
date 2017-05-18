@@ -5,7 +5,7 @@
 How to? | COMMAND
 ------------ | -------------
 Starting Testnet | `sh setup_test.sh`
-Stop Testnet | `sh initd-aeterity.sh stop`
+Stop Testnet | `sh initd-aeternity.sh stop`
 Access screen session 3010| `screen -r aeternity-3010`
 Access screen session 3020| `screen -r aeternity-3020`
 Access screen session 3030| `screen -r aeternity-3030`
@@ -25,4 +25,8 @@ The script 'setup_test.sh' will copy 3 times the testnet-folder into:
  * Node 3020 and 3030 as full node
  
  You find this file here: https://github.com/Zwilla/aeternity-testnet/blob/master/docs/testnet.md
- 
+  
+  Doante and support me:
+  * btc: -[1DaGkc1Uv4GeCSpjkrMVzCA35ENmrd526V]
+  * eth: -[0x284DbB6139e2e08cd3D3BE6f51306c19cAB04e3c]
+  * aeo: -[0x] (Aeternity Tokens)

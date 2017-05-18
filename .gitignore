@@ -14,3 +14,11 @@ keys_backup
 /dializer.plt
 /rebar.lock
 /testnet.iml
+.DS_Store
+blocks/
+config/
+data/.DS_Store
+dialyzer-aeternity.plt
+external_web/.DS_Store
+external_web/dist/
+external_web/node_modules/
