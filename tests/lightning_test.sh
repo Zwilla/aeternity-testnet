@@ -5,6 +5,7 @@
 #Open up 3 terminals.
 #Launch one using port 3010, one on 3020, and one on 3030.
 #Then run this script from a fourth terminal.
+#This script is used by test_setup.sh from there you can start it by selecting it.
 
 #It lightning spends 4 coins one way, then spends the same 4 back.
 echo "####################### add peer 3030 to 3011 #######################\n"
@@ -47,6 +48,9 @@ echo "\n####################### sync peer 3030 with 3011 #######################
 curl -i -d '["sync", [127,0,0,1], 3030]' http://localhost:3011
 sleep 1
 
+curl -i -d '["channel_spend", [127,0,0,1], 3030, 777]' http://localhost:3011
+sleep 1
+
 echo "\n####################### 2 step handshake for lightning spend ############"
 echo "####################### new_channel_with_server on 3030  - 3011 #########\n"
 curl -i -d '["lightning_spend", [127,0,0,1], 3030, 2, 4, 10]' http://localhost:3011
@@ -55,6 +59,7 @@ echo "\n####################### learn_secret on 3021 ###########################
 curl -i -d '["learn_secret", "AgAAAAwr/nWTT4zbCS4lAuc=","WgAAAAAAOkYAAAAAMgAAAAABAAAAAACEC0dIFBQoAgAAAAx3wv4k7MKMmFva1BoKOhYUFhRGAAAAAAAAAAAAAgAAACcQRwAAAAAxAAAAAAEAAAAAAEiECw=="]' http://localhost:3021
 sleep 1
 
+#it still works if you learn the secret before pulling channel state, or if you pull channel state and then learn the secret.
 echo "\n####################### 3 step handshake #############################"
 echo "####################### pull_channel_state from 3030  to 3021 ########\n"
 curl -i -d '["pull_channel_state", [127,0,0,1], 3030]' http://localhost:3021

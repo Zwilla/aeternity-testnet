@@ -11,10 +11,10 @@ channel_feeder.erl:244: The call channels:entropy(OldChannel::{_,'empty' | {'cha
 channel_manager.erl:27: Call to missing or unexported function dict:delete/2
 base58.erl:201: The pattern 'error' can never match the type ['error' | 1..255]
 backup.erl:3: Call to missing or unexported function constants:blocks/0
+backup.erl:3: Call to missing or unexported function constants:entropy/0
 backup.erl:3: Call to missing or unexported function constants:accounts/0
 backup.erl:3: Call to missing or unexported function constants:channels/0
 backup.erl:3: Call to missing or unexported function constants:block_pointers/0
-backup.erl:3: Call to missing or unexported function constants:entropy/0
 backup.erl:3: Call to missing or unexported function constants:d_accounts/0
 backup.erl:3: Call to missing or unexported function constants:all_secrets/0
 backup.erl:3: Call to missing or unexported function constants:d_channels/0
@@ -26,17 +26,13 @@ testnet_sup.erl:27: Function tree_child/4 will never be called
 testnet_sup.erl:31: Function init/1 has no local return
 testnet_sup.erl:32: The call os:putenv("ERL_CRASH_DUMP_SECONDS",<<_:8>>) breaks the contract (VarName,Value) -> 'true' when VarName :: string(), Value :: string()
 orders.erl:149: Guard test #order{id::non_neg_integer(),aid::non_neg_integer(),amount::non_neg_integer()} =:= N::non_neg_integer() can never succeed
-channel_solo_close.erl:68: The pattern {_, Nonce, SSM, _OurSecret} can never match the type 'ok'
-channel_solo_close.erl:78: Call to missing or unexported function easy:sync/0
-channel_solo_close.erl:87: Function next_ss2/7 has no local return
-channel_solo_close.erl:99: The pattern {Amount1, Nonce1, _} can never match the type {number(),number(),[{'share',non_neg_integer(),non_neg_integer(),non_neg_integer()}],_}
 spk.erl:35: Function bet_amount/1 will never be called
 spk.erl:121: Function many/2 will never be called
-spk.erl:254: Clause guard cannot succeed.
-spk.erl:306: Function find_extra/2 will never be called
-spk.erl:308: Function find_extra/3 will never be called
-spk.erl:320: Function is_in/2 will never be called
-spk.erl:323: Function remove/2 will never be called
+spk.erl:256: Clause guard cannot succeed.
+spk.erl:308: Function find_extra/2 will never be called
+spk.erl:310: Function find_extra/3 will never be called
+spk.erl:322: Function is_in/2 will never be called
+spk.erl:325: Function remove/2 will never be called
 testnet_sign.erl:189: Guard test Verbose::'false' =:= 'true' can never succeed
 easy.erl:66: Guard test {_,{'channel',non_neg_integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),char(),non_neg_integer(),0,boolean(),_},_} =:= X::byte() can never succeed
 easy.erl:111: Call to missing or unexported function spk:run/7
@@ -124,3 +120,13 @@ Unknown functions:
   trie:get_all/2
   trie:put/5
   trie:root_hash/2
+
+  Donate to .. and support Zwilla: 
+
+  * btc:1DaGkc1Uv4GeCSpjkrMVzCA35ENmrd526V 
+
+  * eth:0x284DbB6139e2e08cd3D3BE6f51306c19cAB04e3c 
+
+  * ltc:LNvu63U68G72KXHWP5yqSuSYpoa7ef58c7 
+
+  
