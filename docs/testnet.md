@@ -26,10 +26,22 @@ The script ' [setup_test.sh](https://github.com/Zwilla/aeternity-testnet/blob/ma
 
  To make some tests run this script:
  [lightning_test.sh](https://github.com/Zwilla/aeternity-testnet/blob/master/tests/lightning_test.sh)
- 
- You find this file here: https://github.com/Zwilla/aeternity-testnet/blob/master/docs/testnet.md
+
   
-  Doante to and support Zwilla:
+  Donate to .. and support Zwilla:
   * btc: -[1DaGkc1Uv4GeCSpjkrMVzCA35ENmrd526V]
   * eth: -[0x284DbB6139e2e08cd3D3BE6f51306c19cAB04e3c]
   * aeo: -[0x] (Aeternity Tokens)
+
+  You find this file here: https://github.com/Zwilla/aeternity-testnet/blob/master/docs/testnet.md
+
+  After running the test_setup script you can choose now:
+
+Choose  | COMMAND
+------------ | -------------
+ (1) update and setup! | will setup update and start your testnet
+ (2) start now!        | starts an already installed testnet
+ (3) how to?           | shows this file here
+ (4) clean             | will clean all and delete the extra folders
+ (5) run tests!        | starting lightning test
+ (6) exit!             | exit the script

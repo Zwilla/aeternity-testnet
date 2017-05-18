@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # READ THIS: https://github.com/Zwilla/aeternity-testnet/blob/master/docs/testnet.md
 echo "Do you want to ... an Aeternity Testnet"
-choices=( 'update and setup!' 'start the now!' 'how to?' 'exit!' );
+choices=( 'update and setup!' 'start the now!' 'how to?' 'clean and stop' 'run test' 'exit!' );
 select choice in "${choices[@]}"; do
 
  [[ -n ${choice} ]] || { echo "Invalid choice! Type 1/2/3 or 4, please." >&2; continue; }
@@ -115,24 +115,48 @@ select choice in "${choices[@]}"; do
              mkdir -p blocks;
              touch 3030.txt;
              sh initd-aeternity.sh start;
-      ;;
+             ;;
 
       'how to?')
-      clear;
-      cat docs/testnet.md;
-      echo "\n";
-      echo "1. setup and update";
-      echo "2. start a Testnet";
-      echo "3. show how to again";
-      echo "4. exit now";
-      continue;
-      ;;
+                 clear;
+                 cat docs/testnet.md;
+                 echo "\n";
+                 echo "1. setup and update";
+                 echo "2. start a Testnet";
+                 echo "3. show HowTo again";
+                 echo "4. clean all and stop testnet";
+                 echo "5. run tests";
+                 echo "6. exit now";
+                 continue;
+                 ;;
+    'clean and stop')
+                 echo "stop all Nodes now! ############";
+                 sh initd-aeternity.sh stop;
+                 cd ..
+                 echo "######################### RM 3010 #######################";
+                 sudo rm -R aeternity-testnet3010
+                 echo "######################### RM 3020 #######################";
+                 sudo rm -R aeternity-testnet3020
+                 echo "######################### RM 3030 #######################";
+                 sudo rm -R aeternity-testnet3030
+                 ;;
 
+    'run test')
+                 sh tests/lightning_test.sh;
+                 echo "\n";
+                 echo "1. setup and update";
+                 echo "2. start a Testnet";
+                 echo "3. show HowTo again";
+                 echo "4. clean all and stop testnet";
+                 echo "5. run tests again";
+                 echo "6. exit now";
+                 continue;
+    ;;
     'exit now!')
-      echo "Exiting the Aeternity Testnet setup. \n";
-      echo "#######################################";
-      exit 0;
-      esac
+                 echo "Exiting the Aeternity Testnet setup. \n";
+                 echo "#######################################";
+                 exit 0;
+                 esac
 
 echo "ok";
   break
