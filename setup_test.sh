@@ -19,7 +19,8 @@ select choice in "${choices[@]}"; do
  [[ -n ${choice} ]] || { echo "Invalid choice! Type 1/2/3 or 4, please." >&2; continue; }
 
   case ${choice} in
-    'update and setup a Testnet!')
+
+    'update and setup!')
              echo "Setup a Testnet..."
              echo "######################### CLEAN APP #########################";
              ./rebar clean;
