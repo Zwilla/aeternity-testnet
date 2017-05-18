@@ -1,6 +1,11 @@
 Aeternity
 ==========
 
+  Doante to and support Zwilla:
+  * btc: -[1DaGkc1Uv4GeCSpjkrMVzCA35ENmrd526V]
+  * eth: -[0x284DbB6139e2e08cd3D3BE6f51306c19cAB04e3c]
+  * aeo: -[0x] (Aeternity Tokens)
+  
 A blockchain for trust-free markets in financial derivatives
 
 This is being used by: [æternity](https://aeternity.com).
