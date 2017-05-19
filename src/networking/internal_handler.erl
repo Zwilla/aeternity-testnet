@@ -99,7 +99,7 @@ doit({pubkey}) -> {ok, keys:pubkey()};
 doit({address}) -> {ok, testnet_sign:pubkey2address(keys:pubkey())};
 doit({address, X}) -> {ok, testnet_sign:pubkey2address(X)};
 doit({id}) -> {ok,  keys:id()};
-doit({channel_ids, Partner}) -> {ok, channel_manager:id(Partner)};
+doit({channel_ids, Partner}) -> {ok, channel_manager:read(Partner)};
 doit({new_pubkey, Password}) -> 
     keys:new(Password);
 doit({test}) -> 

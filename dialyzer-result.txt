@@ -8,7 +8,7 @@ channel_feeder.erl:235: Call to missing or unexported function block:channels/1
 channel_feeder.erl:237: Function depth_check2/3 has no local return
 channel_feeder.erl:243: The call channels:entropy(Channel::{_,'empty' | {'channel',non_neg_integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),char(),non_neg_integer(),0,boolean(),_},_}) will never return since it differs in the 1st argument from the success typing arguments: ({'channel',_,_,_,_,_,_,_,_,_,_,_,_,_,_})
 channel_feeder.erl:244: The call channels:entropy(OldChannel::{_,'empty' | {'channel',non_neg_integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),char(),non_neg_integer(),0,boolean(),_},_}) will never return since it differs in the 1st argument from the success typing arguments: ({'channel',_,_,_,_,_,_,_,_,_,_,_,_,_,_})
-channel_manager.erl:27: Call to missing or unexported function dict:delete/2
+channel_manager.erl:45: Call to missing or unexported function dict:delete/2
 base58.erl:201: The pattern 'error' can never match the type ['error' | 1..255]
 backup.erl:3: Call to missing or unexported function constants:blocks/0
 backup.erl:3: Call to missing or unexported function constants:entropy/0
@@ -50,7 +50,6 @@ handler.erl:165: Call to missing or unexported function channel_feeder:make_simp
 handler.erl:168: Call to missing or unexported function channel_feeder:update_to_me/1
 internal_handler.erl:62: Call to missing or unexported function secrets:new/0
 internal_handler.erl:72: Call to missing or unexported function channel_feeder:agree_simplification/3
-internal_handler.erl:102: Call to missing or unexported function channel_manager:id/1
 peers.erl:16: Call to missing or unexported function dict:remove/2
 oracle_questions.erl:13: Cons will produce an improper list since its 2nd argument is 'ok' | nonempty_improper_list(any(),'ok')
 oracle_questions.erl:24: Function save/1 has no local return
