@@ -10,14 +10,6 @@ channel_feeder.erl:243: The call channels:entropy(Channel::{_,'empty' | {'channe
 channel_feeder.erl:244: The call channels:entropy(OldChannel::{_,'empty' | {'channel',non_neg_integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),char(),non_neg_integer(),0,boolean(),_},_}) will never return since it differs in the 1st argument from the success typing arguments: ({'channel',_,_,_,_,_,_,_,_,_,_,_,_,_,_})
 channel_manager.erl:45: Call to missing or unexported function dict:delete/2
 base58.erl:201: The pattern 'error' can never match the type ['error' | 1..255]
-backup.erl:3: Call to missing or unexported function constants:blocks/0
-backup.erl:3: Call to missing or unexported function constants:entropy/0
-backup.erl:3: Call to missing or unexported function constants:accounts/0
-backup.erl:3: Call to missing or unexported function constants:channels/0
-backup.erl:3: Call to missing or unexported function constants:block_pointers/0
-backup.erl:3: Call to missing or unexported function constants:d_accounts/0
-backup.erl:3: Call to missing or unexported function constants:all_secrets/0
-backup.erl:3: Call to missing or unexported function constants:d_channels/0
 secrets.erl:54: The pattern 'false' can never match the type 'true'
 secrets.erl:67: Function real_new_lightning/0 will never be called
 testnet_sup.erl:14: Function child_maker/1 will never be called

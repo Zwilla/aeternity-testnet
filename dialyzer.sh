@@ -26,6 +26,17 @@ if [ ! -e dialyzer-aeternity.plt ]; then
        dialyzer --build_plt --output_plt dialyzer-aeternity.plt --apps erts kernel stdlib mnesia compiler crypto hipe syntax_tools;
        echo "######################### ADD APP AETERNITY ##########################";
        dialyzer --add_to_plt --output_plt dialyzer-aeternity.plt ebin/*.beam;
+
+       dialyzer --add_to_plt --output_plt dialyzer-aeternity.plt deps/chalang/ebin/*.beam;
+       dialyzer --add_to_plt --output_plt dialyzer-aeternity.plt deps/cowboy/ebin/*.beam;
+       dialyzer --add_to_plt --output_plt dialyzer-aeternity.plt deps/cowlib/ebin/*.beam;
+       dialyzer --add_to_plt --output_plt dialyzer-aeternity.plt deps/dump/ebin/*.beam;
+       dialyzer --add_to_plt --output_plt dialyzer-aeternity.plt deps/jiffy/ebin/*.beam;
+       dialyzer --add_to_plt --output_plt dialyzer-aeternity.plt deps/pink_hash/ebin/*.beam;
+       dialyzer --add_to_plt --output_plt dialyzer-aeternity.plt deps/ranch/ebin/*.beam;
+       dialyzer --add_to_plt --output_plt dialyzer-aeternity.plt deps/trie/ebin/*.beam;
+
+
        echo "######################### CHECK the dializer #########################";
        dialyzer --check_plt --plt dialyzer-aeternity.plt;
        echo "######################### INFO ABOUT #################################";

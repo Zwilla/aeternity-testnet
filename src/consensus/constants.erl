@@ -75,12 +75,25 @@ initial_channels() -> %Around 10000 channels.
 %-define(PBCFV, fractions:multiply_int(block_creation_fee(), initial_coins()) div 3).
 %-define(BR, fractions:new(1, 1000)).%spending 1000 coins necessarily burns ~1.
 %burn_ratio() -> ?BR.
-root() -> "data/".
-block_hashes() -> root() ++ "block_hashes.db".
-keys() -> root() ++ "keys.db".
-top() -> root() ++ "top.db".
+
+root()            -> "data/".
+block_hashes()    -> root() ++ "block_hashes.db".
+keys()            -> root() ++ "keys.db".
+top()             -> root() ++ "top.db".
 channel_manager() -> root() ++ "channel_manager.db".
-secrets() -> root() ++ "secrets.db".
+secrets()         -> root() ++ "secrets.db".
+
+%missing this ones
+blocks()          -> root() ++ "blocks.db".
+block_pointers()  -> root() ++ "block_pointers.db".
+accounts()        -> root() ++ "accounts.db".
+all_secrets()     -> root() ++ "all_secrets.db".
+d_accounts()      -> root() ++ "d_accounts.db".
+channels()        -> root() ++ "channels.db".
+d_channels()      -> root() ++ "d_channels.db".
+entropy()         -> root() ++ "entropy.db".
+% see backup.erl
+
 word_size() -> 100000.
 balance_bits() -> 48.%total number of coins is 2^(balance_bits()).
 half_bal() -> round(math:pow(2, balance_bits()-1)).
@@ -177,9 +190,9 @@ minimum_oracle_time() ->
 
 maximum_question_size() ->
     1000.
+
 channel_granularity() ->    
     10000.
-    
 
 test() ->
     success.
