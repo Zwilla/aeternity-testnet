@@ -36,7 +36,7 @@ doit(Tx, Trees, NewHeight) ->
     SPK = testnet_sign:data(SignedSPK),
     CID = spk:cid(SPK),
     {_, OldChannel, _} = channels:get(CID, Channels),
-    CA = channels:amount(OldChannel),
+    %CA = channels:amount(OldChannel),
     %false = CA == 0,
     true = testnet_sign:verify(SignedSPK, Accounts),
     Acc1 = channels:acc1(OldChannel),

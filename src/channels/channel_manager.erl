@@ -57,11 +57,7 @@ handle_call(keys, _From, X) ->
 
 handle_call({read, CID}, _From, X) ->
   {reply, dict:find(CID, X), X};
-
-
-handle_call(_, _From, X) ->
-  {reply, X, X}.
-
+handle_call(_, _From, X) -> {reply, X, X}.
 
 read(CID) ->
   gen_server:call(?MODULE, {read, CID}).

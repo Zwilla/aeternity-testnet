@@ -1,7 +1,25 @@
+We need to test channel_solo_close and channel_slash and channel_timeout from easy.
+
+
+
+Cold storage.
+
+trees:garbage needs to garbage collect more trees.
+
+we should optionally garbage collect old blocks, only keep the headers.
+
+We should let a node sync with the network without downloading all the old blocks. Instead it downloads headers, and a recent state tree.
+
+
+We need an integration test where one node is a market, and the other two nodes are traders.
+
 
 spk:is_improvement needs better checks.
 Make sure delay isn't too big, and the fees aren't too high.
 
+We should seperate all the consensus code from the non-consensus code. This way soft forks will be easier.
+Mostly this means moving all the channel stuff into /src/channels
+stuff from spk for example.
 
 We need a way to know how long the delay could be on every possible way of closing the channel.
 The channel can only close on a ?crash opcode, the delay is always programmed in just before the ?crash, so we should be able to calculate the delay from the bytecode.
@@ -13,22 +31,12 @@ We need to regularly check on our channels to see if either participant is runni
 When you are running short on funds you need to ask your partner to close the channel. If they don't, you need to start closing the channel without their help.
 
 
-api needs to be encrypted, especially the stuff about channels. Otherwise anyone can see how to do a channel_slash to close our channel at times we don't want to close it.
-
-
-We need to think about channel nonces very carefully.
-We don't want old data to be unexepctedly reusable.
-
-
 in spk prove_facts2, the burn and existence trees store by hash not by integer, so the code needs to be modified for them.
 
 
 we need tests for:
 channel smart contract,
 test that the channel pays out the correct amount in every way it could be closed. It looks like channels:update could have some bugs.
-
-merkel should be updated. The tuples of binaries should start with an atom. This way proofs can be encoded as javascript objects.
-Alternatively, we could use raw jiffy to encode the proofs.
 
 
 download blocks talk/1 seems useless. talker:talk is accomplishing the same goal.
@@ -53,8 +61,6 @@ We should add everything from easy to internal_handler.erl
 We need to update download_blocks so that peers get ranked, and we spend more time talking to higher-ranked peers.
 
 There is a problem where if you crash while syncing with a peer, then you skip trying to sync with any peer lower on the list. this is very bad.
-
-make the api networking/handler be entirely encrypted. This is to protect information about the channels. https://github.com/BumblebeeBat/pink_crypto/blob/master/src/encryption.erl
 
 download_blocks could be more efficient.
 
