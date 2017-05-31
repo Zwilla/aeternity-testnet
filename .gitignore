@@ -1,5 +1,4 @@
 /.idea/
-/deps/
 /ebin/
 /rel/
 *.db
@@ -22,3 +21,4 @@ dialyzer-aeternity.plt
 external_web/.DS_Store
 external_web/dist/
 external_web/node_modules/
+
