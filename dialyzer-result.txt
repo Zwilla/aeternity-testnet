@@ -9,19 +9,30 @@ channel_feeder.erl:241: Function depth_check2/3 has no local return
 channel_feeder.erl:247: The call channels:entropy(Channel::{_,'empty' | {'channel',non_neg_integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),char(),non_neg_integer(),0,boolean(),_},_}) will never return since it differs in the 1st argument from the success typing arguments: ({'channel',_,_,_,_,_,_,_,_,_,_,_,_,_,_})
 channel_feeder.erl:248: The call channels:entropy(OldChannel::{_,'empty' | {'channel',non_neg_integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),integer(),non_neg_integer(),non_neg_integer(),non_neg_integer(),char(),non_neg_integer(),0,boolean(),_},_}) will never return since it differs in the 1st argument from the success typing arguments: ({'channel',_,_,_,_,_,_,_,_,_,_,_,_,_,_})
 channel_manager.erl:45: Call to missing or unexported function dict:delete/2
-base58.erl:201: The pattern 'error' can never match the type ['error' | 1..255]
-mine.erl:13: The pattern 'true' can never match the type 'false'
+order_book.erl:13: Function make_order/4 will never be called
 secrets.erl:51: Function old_new_lightning/0 will never be called
 secrets.erl:57: Function test_new_lightning/0 will never be called
+base58.erl:201: The pattern 'error' can never match the type ['error' | 1..255]
+constants.erl:18: The variable _ can never match since previous clauses completely covered the type 'true'
+download_blocks.erl:71: Function get_blocks/5 will never be called
+download_blocks.erl:76: The created fun has no local return
+download_blocks.erl:86: The call block:hash(PrevBlock::[any(),...]) will never return since it differs in the 1st argument from the success typing arguments: ({'block_plus',{'block_plus',{'block_plus',{_,_,_,_,_,_} | {_,_,_,_,_,_,_,_,_,_},_,_,_,_} | {'block',_,_,_,_,_,_,_,_,_},_,_,_,_} | {'block',_,_,_,_,_,_,_,_,_},_,_,_,_} | {'block',_,_,_,_,_,_,_,_,_})
+download_blocks.erl:93: The created fun has no local return
+download_blocks.erl:94: Guard test any() =:= NextHash::none() can never succeed
+download_blocks.erl:111: Function send_blocks/6 will never be called
+download_blocks.erl:123: Function send_blocks2/3 will never be called
+download_blocks.erl:129: Function sync3/1 will never be called
+mine.erl:18: The pattern 'false' can never match the type 'true'
 testnet_sup.erl:14: Function child_maker/1 will never be called
 testnet_sup.erl:25: Function tree_child/3 will never be called
 testnet_sup.erl:27: Function tree_child/4 will never be called
 testnet_sup.erl:31: Function init/1 has no local return
 testnet_sup.erl:32: The call os:putenv("ERL_CRASH_DUMP_SECONDS",<<_:8>>) breaks the contract (VarName,Value) -> 'true' when VarName :: string(), Value :: string()
 accounts.erl:137: Call to missing or unexported function trees:garbage/1
-governance.erl:18: The pattern 'true' can never match the type 'false'
+governance.erl:19: The pattern 'false' can never match the type 'true'
 orders.erl:149: Guard test #order{id::non_neg_integer(),aid::non_neg_integer(),amount::non_neg_integer()} =:= N::non_neg_integer() can never succeed
 spk.erl:255: Clause guard cannot succeed.
+testnet_sign.erl:22: Function to_bytes/1 will never be called
 testnet_sign.erl:189: Guard test Verbose::'false' =:= 'true' can never succeed
 dice.erl:17: Call to missing or unexported function channel_feeder:make_simplification/3
 dice.erl:20: Call to missing or unexported function channel_feeder:update_to_me/1
@@ -95,8 +106,6 @@ Unknown functions:
   inets:start/0
   jiffy:decode/1
   jiffy:encode/1
-  leaf:meta/1
-  leaf:value/1
   pow:above_min/3
   pow:check_pow/2
   pow:data/1
@@ -105,12 +114,6 @@ Unknown functions:
   pow:sci2int/1
   sign_tx:sign/1
   to_channel_tx:create_channel/5
-  trie:delete/3
-  trie:garbage/2
-  trie:get/3
-  trie:get_all/2
-  trie:put/5
-  trie:root_hash/2
 
   Donate to .. and support Zwilla: 
 
