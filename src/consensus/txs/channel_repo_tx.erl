@@ -1,4 +1,4 @@
-%If a channel has less than 0 money, then anyone can delete it for a small reward.
+                                                %If a channel has less than 0 money, then anyone can delete it for a small reward.
 
 -module(channel_repo_tx).
 -export([make/4,doit/3]).
@@ -9,7 +9,7 @@ make(From, ID, Fee, Trees) ->
     Channels = trees:channels(Trees),
     {_, Acc, Proof} = accounts:get(From, Accounts),
     {_, _, CProof} = channels:get(ID, Channels),
-    N = accounts:nonce(Acc) + 1, 
+    N = accounts:nonce(Acc) + 1,
     Tx = #cr{from = From, nonce = N, fee = Fee, id = ID},
     {Tx, [Proof, CProof]}.
 

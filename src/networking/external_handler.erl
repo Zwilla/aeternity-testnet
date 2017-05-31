@@ -1,15 +1,15 @@
 -module(external_handler).
 
 -export([init/3, handle/2, terminate/3]).
-%example of talking to this handler:
-%httpc:request(post, {"http://127.0.0.1:3011/", [], "application/octet-stream", "echo"}, [], []).
-%curl -i -d '[-6,"test"]' http://localhost:3011
+                                                %example of talking to this handler:
+                                                %httpc:request(post, {"http://127.0.0.1:3011/", [], "application/octet-stream", "echo"}, [], []).
+                                                %curl -i -d '[-6,"test"]' http://localhost:3011
 handle(Req, _) ->
     {F, _} = cowboy_req:path(Req),
     File = << <<"external_web">>/binary, F/binary>>,
     {ok, _Data, _} = cowboy_req:body(Req),
     Headers = [{<<"content-type">>, <<"text/html">>},
-    {<<"Access-Control-Allow-Origin">>, <<"*">>}],
+               {<<"Access-Control-Allow-Origin">>, <<"*">>}],
     Text = read_file(File),
     {ok, Req2} = cowboy_req:reply(200, Headers, Text, Req),
     {ok, Req2, File}.

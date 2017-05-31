@@ -13,7 +13,7 @@ hash([F|T], X) -> hash(T, [hash:file(F)|X]).
 
 backup() -> backup(backup_files()).
 backup([]) -> ok;
-backup([F|T]) -> 
+backup([F|T]) ->
     file:copy(F, ?backup++F),
     backup(T).
 
