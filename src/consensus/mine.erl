@@ -12,11 +12,11 @@ handle_cast(mine, go) ->
     case free_constants:test_mode() of
 	true ->
 	    spawn(fun() ->
-	    block:mine_blocks(1, 5, 1),
+			  block:mine_blocks(1, 5, 1),
 			  mine()
 		  end);
-	false ->
-    spawn(fun() ->
+	false -> 
+	    spawn(fun() ->
 			  block:mine_blocks(1, 1000000),
 			  mine()
 		  end)
@@ -24,7 +24,7 @@ handle_cast(mine, go) ->
     {noreply, go};
 handle_cast(start, stop) ->
     Cores = block:guess_number_of_cpu_cores(),
-    io:fwrite("start mining with"),
+    io:fwrite("start mining with "),
     io:fwrite(integer_to_list(Cores)),
     io:fwrite(" cores.\n"),
     {noreply, go};

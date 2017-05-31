@@ -130,7 +130,7 @@ decrypt(EMessage) ->
     binary_to_term(element(3, gen_server:call(?MODULE, {decrypt, EMessage}))).
 encrypt(Message, Pubkey) ->
     gen_server:call(?MODULE, {encrypt, term_to_binary(Message), Pubkey}).
-
+    
 test() ->
     unlocked = keys:status(),
     Tx = {spend, 1, 1, 2, 1, 1},

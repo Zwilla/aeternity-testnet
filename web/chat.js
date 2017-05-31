@@ -1,6 +1,6 @@
 var chat_button = document.createElement("BUTTON");
 chat_button.id = "chat_button";
-var t = document.createTextNode("load messages"), start, msgs;
+var t = document.createTextNode("load messages");
 chat_button.appendChild(t);
 function chat_func() {// variable_get(["msg_peers"], chat_func2); }
 //function chat_func2(peers) {
