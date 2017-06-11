@@ -31,6 +31,7 @@ sync(IP, Port, MyHeight) ->
     %S = erlang:timestamp(),
     talk({top}, IP, Port, 
 	 fun(X) ->
+		 %io:fwrite("top returned"),
 		 case X of
 		     {error, failed_connect} -> 
 			 io:fwrite("failed connect"),
@@ -48,6 +49,7 @@ sync(IP, Port, MyHeight) ->
 					      trade_blocks(IP, Port, [Y], HH)
 						    end);
 			     true ->
+				 io:fwrite("downloading blocks 2\n"),
 				 trade_blocks(IP, Port, [TopBlock], Height),
 				 get_txs(IP, Port)
 				     
@@ -101,7 +103,7 @@ send_blocks(IP, Port, T, T, L, _N) ->
 send_blocks(IP, Port, TopHash, CommonHash, L, N) ->
     if
 	TopHash == 0 -> send_blocks2(IP, Port, L);
-	%N>4000 -> send_blocks2(IP, Port, L);
+	N>4000 -> send_blocks2(IP, Port, L);
 	true -> 
 	    BlockPlus = block:read(TopHash),
 	    PrevHash = block:prev_hash(BlockPlus),
@@ -109,6 +111,7 @@ send_blocks(IP, Port, TopHash, CommonHash, L, N) ->
     end.
 send_blocks2(_, _, []) -> ok;
 send_blocks2(IP, Port, [Block|T]) -> 
+    io:fwrite("give block !!!!!!!\n"),
     talker:talk({give_block, Block}, IP, Port),
     timer:sleep(20),
     send_blocks2(IP, Port, T).

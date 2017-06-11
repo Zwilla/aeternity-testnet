@@ -103,8 +103,8 @@ Block = {block_plus,{block,0,
                    [],
 		     TreeRoot,
                    %<<86,31,143,142,73,28,203,208,227,116,25,154>>,
-                   1,0,4080,<<>>,%1},
-		     constants:magic()},
+                   1,0,4080,<<>>,1},
+		     %constants:magic()}
             {pow,<<>>,4080,44358461744572027408730},
 	 Trees,
             %{trees,1,0,0,0,0,38},
@@ -120,7 +120,7 @@ genesis() ->
                    <<0,0,0,0,0,0,0,0,0,0,0,0>>,
                    [],
                    <<86,31,143,142,73,28,203,208,227,116,25,154>>,
-                   1,0,4080,<<>>,constants:magic()},
+                   1,0,4080,<<>>,1},
             {pow,<<>>,4080,44358461744572027408730},
             {trees,1,0,0,0,0,72},
             0,
@@ -266,15 +266,14 @@ retarget2(Hash, N, L) ->
     T = B#block.time,
     H = B#block.prev_hash,
     retarget2(H, N-1, [T|L]).
-check1(BP) ->    
-    Block = block(BP),
-    true = Block#block.magic == constants:magic(),
+check1(BP) ->
     BH = hash(BP),
     GH = hash(genesis()),
     if
 	BH == GH ->
 	    {BH, 0};
 	true ->    
+	    Block = block(BP),
 	    Difficulty = Block#block.difficulty,
 	    true = Difficulty >= constants:initial_difficulty(),
 	    true = check_pow(BP),
@@ -298,11 +297,13 @@ check2(BP) ->
 
     %check2 assumes that the parent is in the database already.
     Block = block(BP),
+    true = Block#block.magic == constants:magic(),
     Difficulty = Block#block.difficulty,
     PH = Block#block.prev_hash,
     ParentPlus = read(PH),
     Trees0 = ParentPlus#block_plus.trees,
     Difficulty = next_difficulty(ParentPlus),
+    true = is_record(ParentPlus, block_plus),
     Prev = block(ParentPlus),
     Governance = trees:governance(Trees0),
     CL = governance:get_value(comment_limit, Governance),
