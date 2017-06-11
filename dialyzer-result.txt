@@ -13,9 +13,9 @@ order_book.erl:13: Function make_order/4 will never be called
 secrets.erl:51: Function old_new_lightning/0 will never be called
 secrets.erl:57: Function test_new_lightning/0 will never be called
 base58.erl:201: The pattern 'error' can never match the type ['error' | 1..255]
-block.erl:538: The pattern 'true' can never match the type 'false'
+block.erl:539: The pattern 'true' can never match the type 'false'
 constants.erl:17: The pattern 'true' can never match the type 'false'
-download_blocks.erl:65: Function get_blocks/5 will never be called
+download_blocks.erl:67: Function get_blocks/5 will never be called
 mine.erl:13: The pattern 'true' can never match the type 'false'
 testnet_sup.erl:14: Function child_maker/1 will never be called
 testnet_sup.erl:25: Function tree_child/3 will never be called
