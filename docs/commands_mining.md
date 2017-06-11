@@ -19,8 +19,3 @@ to check if you are currently mining:
 ```
 mine:is_on().
 ```
-
-```
-easy:off().
-```
-

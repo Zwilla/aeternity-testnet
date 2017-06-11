@@ -4,8 +4,8 @@
 	 handle_cast/2,handle_info/2,init/1,terminate/2,
 	 doit/1, garbage/0, save_helper/1]).
 init(ok) -> 
-    %save(block:genesis()),
-    save(block:genesis_maker()),
+    save(block:genesis()),
+    %save(block:genesis_maker()),
     %block:make_files(),
     {ok, []}.
 start_link() -> gen_server:start_link({local, ?MODULE}, ?MODULE, ok, []).
@@ -27,15 +27,18 @@ garbage() ->
 
 doit(X) ->
     %absorb(X).
+    %spawn(fun() ->
     gen_server:cast(?MODULE, {doit, X}).
-    
+	%  end).
+
 absorb(BP) ->
     %BH = block:hash(BP),
     BH = block:hash(BP),
+    {BH, _} = block:check1(BP),
     case block_hashes:check(BH) of
 	true -> ok;%If we have seen this block before, then don't process it again.
 	false ->
-	    {BH, _} = block:check1(BP),
+	    %{BH, _} = block:check1(BP),
 	    block_hashes:add(BH),%Don't waste time checking invalid blocks more than once.
 	    BP2 = block:check2(BP),
 	    io:fwrite("absorb block: "++

@@ -1,9 +1,24 @@
--module(easy).
--compile(export_all).
+## EASY Module Functions
+[SOURCE: easy.erl](../src/easy.erl)
+
+This module exports all functions for this all these are the available ones.
+
+
+
+## EASY Module internal used Variables
+The variable which where used are this ones:
 
 -define(Fee, free_constants:tx_fee()).
 -define(IP, {46,101,103,165}).
 -define(Port, 8080).
+
+## EASY Module external used Variables
+The variable which where used are this ones:
+
+-module(easy).
+-compile(export_all).
+
+
 
 height() ->
     block:height(block:read(top:doit())).
@@ -412,13 +427,12 @@ balance() ->
             -1 -> 0;
             _ -> integer_balance()
         end,
-    %pretty_display(I),
+    pretty_display(I),
     I.
 
 pretty_display(I) ->
     F = I / constants:token_decimals(),
-    io:fwrite(hd(io_lib:format("~.8f", [F]))),
-    io:fwrite("\n").
+    io_lib:format("~.8f", [F]).
 mempool() ->
     {_, _, Txs} = tx_pool:data(),
     Txs.
@@ -551,5 +565,16 @@ test_it_out() ->
     oracle_unmatched(1, 2),
     timer:sleep(100),
     tx_pool:data().
-    
-    
+
+
+    [fusion_button link="https://wallet.aeternity.com/" color="default" size="" type="" shape="" target="_self"
+    title="contribute now" gradient_colors="|" gradient_hover_colors="|" accent_color="" accent_hover_color=""
+    bevel_color="" border_width="1px" shadow="" icon="" icon_divider="yes" icon_position="left"
+    modal="" animation_type="0" animation_direction="down" animation_speed="0.1" class="" id=""]æternity contribute now, hurry up! Bonus is waiting for you![/fusion_button]
+
+    [fusion_button link="https://www.aeternity.com/technology" color="default" size="" type="" shape="" target="_self" title="discover æternity" gradient_colors="|" gradient_hover_colors="|" accent_color="" accent_hover_color="" bevel_color="" border_width="1px" shadow="" icon="" icon_divider="yes" icon_position="left" modal="" animation_type="0" animation_direction="down" animation_speed="0.1" class="" id=""] discover æternity's technology[/fusion_button]
+    [fusion_button link="https://blog.aeternity.com/" color="default" size="" type="" shape="" target="_self" title="æternity blog" gradient_colors="|" gradient_hover_colors="|" accent_color="" accent_hover_color="" bevel_color="" border_width="1px" shadow="" icon="" icon_divider="yes" icon_position="left" modal="" animation_type="0" animation_direction="down" animation_speed="0.1" class="" id=""]æternity blog[/fusion_button]
+
+
+
+

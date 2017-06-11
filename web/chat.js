@@ -51,5 +51,5 @@ scrollBox.style = "height:400px;width:500px;border:1px solid #ccc;font:14px/14px
 var ul = document.createElement("ul");
 ul.id = "messages";
 scrollBox.appendChild(ul);
-scrollBox.id = "scrollBox";
+scrollBox.id = "scrollBox"
 document.body.appendChild(scrollBox);
