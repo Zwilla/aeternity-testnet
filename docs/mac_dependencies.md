@@ -31,7 +31,11 @@ cd testnet
 mkdir data blocks
 make release-build
 ```````````````
+***
+## Running the blockchain
 
+If you just want to launch a node and connect to the network, look at the [quick start guide](https://github.com/aeternity/testnet/blob/master/docs/turn_it_on.md)
+***
 I hope it works for you also. Let us know it you have any problems
 
 cheers
