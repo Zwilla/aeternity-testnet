@@ -18,11 +18,11 @@ If you have Erlang already on your machine you can compile it by this way:
 3. login to your mac, open a terminal window (on spotlight search just type in this `terminal.app` and hit enter)
 4. Change into the directory where you want to install our software
 5. Now run this commands:
-````````
+```
 git clone https://github.com/aeternity/testnet.git
 cd testnet
 make prod-build
-````````
+```
 
 ## Example 2 with Homebrew
 On this example we use [Homebrew](https://brew.sh) to compile and run the testnet:
@@ -30,7 +30,7 @@ On this example we use [Homebrew](https://brew.sh) to compile and run the testne
 1. Update your OSX system
 2. login to your mac, open a terminal window (on spotlight search just type in this `terminal.app` and hit enter)
 3. copy and past the folowing commands into your terminal:
-```````````````
+````````````````````
 xcode-select --install
 # follow the steps on apple's popup window
 xcode-select -p
@@ -51,7 +51,7 @@ cd /Users/$LOGNAME/Downloads/aeternity
 git clone https://github.com/aeternity/testnet.git
 cd testnet
 make prod-build
-```````````````
+````````````````````
 ***
 ## Running the blockchain
 
@@ -67,4 +67,3 @@ If you have an working example, feel free to commit it.
 many thanks in advance
 
 [☜](https://github.com/aeternity/testnet/tree/master/docs)...[☝︎](#toc)...[☞](https://github.com/aeternity/testnet/blob/master/docs/turn_it_on.md)
-
