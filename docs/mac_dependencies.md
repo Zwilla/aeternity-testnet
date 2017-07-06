@@ -23,8 +23,7 @@ brew link --overwrite erlang
 brew install gnu-sed --with-default-names
 brew link --overwrite gnu-sed
 cd /Users/$LOGNAME/Downloads
-mkdir -p aeternity/testnet/data/
-mkdir -p aeternity/testnet/blocks/
+mkdir -p aeternity
 cd /Users/$LOGNAME/Downloads/aeternity
 git clone https://github.com/aeternity/testnet.git
 cd testnet
